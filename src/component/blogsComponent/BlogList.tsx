@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import useQueryGet from "../../hooks/useQueryGet"
 import { courseAndBlogsType } from "../../types/courseAndBlogs"
 import CourseCardAndBlog from "../common/CourseAndBlogsCard"
@@ -21,7 +21,7 @@ const BlogList = () => {
             </div>
 
             <div className=" w-[70%] text-center ">
-                <h2  className='font-bold text-2xl mb-8 text-center'>Course list</h2>
+                <h2  className='font-bold text-2xl mb-8 text-center'>blog list</h2>
                 <CustomSearch setQuery={setQuery}/>
 
                 <div className='flex flex-wrap gap-y-4 justify-around mt-6'>

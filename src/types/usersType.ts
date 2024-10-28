@@ -1,5 +1,5 @@
-type CourseRated={
-    courseId:string,
+type CoursesAndBlogsRated={
+    coursesAndBlogsId:string,
     rateCount:number
 }
 export type users = {
@@ -7,6 +7,6 @@ export type users = {
     password: string,
     token: string,
     id: string
-    favoriteCourses:string[],
-    courseRated:CourseRated[]
+    favoriteCoursesAndBlogs:string[],
+    coursesAndBlogsRated:CoursesAndBlogsRated[]
 }

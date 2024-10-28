@@ -1,9 +1,9 @@
 import React from 'react'
 
-const FavoriteCourses = () => {
+const favoriteCoursesAndBlogs = () => {
   return (
-    <div>FavoriteCourses</div>
+    <div>favoriteCoursesAndBlogs</div>
   )
 }
 
-export default FavoriteCourses
+export default favoriteCoursesAndBlogs

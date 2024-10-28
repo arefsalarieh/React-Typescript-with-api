@@ -11,7 +11,6 @@ const Sidebar = () => {
           <div className="collapse-title text-xl font-medium text-white">user pannel</div>
           <div className="collapse-content flex flex-col">
             <NavLink to='/ProfileLayout'>Dashboard</NavLink>
-            <NavLink to='/ProfileLayout/FavoriteCourses'>FavoriteCourses</NavLink>            
           </div>
         </div>
         <div className="collapse collapse-arrow join-item border-base-300 border">

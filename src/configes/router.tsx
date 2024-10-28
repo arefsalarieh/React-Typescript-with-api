@@ -7,7 +7,6 @@ import Courses from "../pages/courses/Courses"
 import ProfileLayout from "../pages/profile/ProfileLayout"
 import Dashboard from "../component/profileComponent/Dashboard"
 import CreateCourse from "../component/profileComponent/CreateCourse"
-import FavoriteCourses from "../component/profileComponent/FavoriteCourses"
 import Blogs from "../pages/blogs/Blogs"
 import CreateBlog from "../component/profileComponent/CreateBlog"
 
@@ -57,10 +56,6 @@ const router = createBrowserRouter([
                 path:'CreateBlog',
                 element:<CreateBlog/>
             },            
-            {
-                path:'FavoriteCourses',
-                element:<FavoriteCourses/>
-            },
 
             
         ]

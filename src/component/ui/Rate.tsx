@@ -1,37 +1,34 @@
 import { Flex, Rate } from 'antd';
 import http from '../../core/services/interceptor'
 import useMutationPut from './../../hooks/useMutationPut';
-import useQueryGet from '../../hooks/useQueryGet';
-import { courseAndBlogsType } from '../../types/courseAndBlogs';
 import { users } from '../../types/usersType';
 import { getItem } from '../../core/services/common/storage.services';
 
 
-const CustomRate= ({rate , rateCount , courseId , setChangeRate}:{rate:number , rateCount:number ,courseId:string , setChangeRate:(num:number)=>void}) => {
+const CustomRate= ({rate , rateCount , coursesAndBlogsId , setChangeRate}:{rate:number , rateCount:number ,coursesAndBlogsId:string , setChangeRate:(num:number)=>void}) => {
   const userId = getItem('id')
   
 
   const {mutate} = useMutationPut(`/users/${userId}`,'')
-  const {mutate:mutate2} = useMutationPut(`/courseandblogs/${courseId}`,'courseList')
+  const {mutate:mutate2} = useMutationPut(`/courseandblogs/${coursesAndBlogsId}`,'courseList')
 
   const sendRate = async (myRate:number) =>{
     const res = await http.get(`/users/${userId}` )
-    const courseRes = await http.get(`/courseandblogs/${courseId}` )
+    const courseRes = await http.get(`/courseandblogs/${coursesAndBlogsId}` )
 
     const userObj:users = res.data
     const courseObj = courseRes.data
 
 
-    const hasRated = userObj.courseRated.some(item=>{
-      return item.courseId === courseId
+    const hasRated = userObj.coursesAndBlogsRated.some(item=>{
+      return item.coursesAndBlogsId === coursesAndBlogsId
     })
 
     if(hasRated){
-      console.log(1);
-        const newArr = userObj.courseRated.filter(item=>{
-          return item.courseId !== courseId
+        const newArr = userObj.coursesAndBlogsRated.filter(item=>{
+          return item.coursesAndBlogsId !== coursesAndBlogsId
         })
-        userObj.courseRated = [...newArr , {courseId:courseId , rateCount:myRate}]  
+        userObj.coursesAndBlogsRated = [...newArr , {coursesAndBlogsId:coursesAndBlogsId , rateCount:myRate}]  
         
         const oldTotal = rateCount * rate
         const newTotal = oldTotal - rate + myRate
@@ -41,8 +38,7 @@ const CustomRate= ({rate , rateCount , courseId , setChangeRate}:{rate:number , 
         courseObj.rate = newRate      
     }
     else{
-      console.log(2);
-      userObj.courseRated = [...userObj.courseRated , {courseId:courseId , rateCount:myRate}]
+      userObj.coursesAndBlogsRated = [...userObj.coursesAndBlogsRated , {coursesAndBlogsId:coursesAndBlogsId , rateCount:myRate}]
 
       const oldTotal = rateCount * rate
       const newTotal = oldTotal  + myRate

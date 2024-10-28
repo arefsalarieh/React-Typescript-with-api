@@ -19,7 +19,7 @@ const CourseCardAndBlog = ( {item , setChangeRate }:{item:courseAndBlogsType , s
         if(data){
             const obj  = data;
             const newId = id
-            obj.favoriteCourses = [...obj.favoriteCourses , newId]           
+            obj.favoriteCoursesAndBlogs = [...obj.favoriteCoursesAndBlogs , newId]           
             mutate(obj)
         }
 
@@ -29,10 +29,10 @@ const CourseCardAndBlog = ( {item , setChangeRate }:{item:courseAndBlogsType , s
         if(data){
             const obj  = data;
             const newId = id
-            const newArr = data.favoriteCourses.filter(item=>{
+            const newArr = data.favoriteCoursesAndBlogs.filter(item=>{
                 return item !== newId
             });
-            obj.favoriteCourses = [...newArr]           
+            obj.favoriteCoursesAndBlogs = [...newArr]           
             mutate(obj)
         }
 
@@ -49,15 +49,15 @@ const CourseCardAndBlog = ( {item , setChangeRate }:{item:courseAndBlogsType , s
             <h2 className='font-bold text-lg '>cost : <span className='text-green-400'>{item.cost}</span></h2>
 
 
-            {!data?.favoriteCourses.includes(newItemId) && <div className='mt-1 cursor-pointer w-6'><img src={like} alt="" onClick={()=>handleLike(item.id)}/></div>}
-            {data?.favoriteCourses.includes(newItemId) && <div className='mt-1 cursor-pointer w-6'><img src={dislike} alt="" onClick={()=>deleteLike(item.id)}/></div>}
+            {!data?.favoriteCoursesAndBlogs.includes(newItemId) && <div className='mt-1 cursor-pointer w-6'><img src={like} alt="" onClick={()=>handleLike(item.id)}/></div>}
+            {data?.favoriteCoursesAndBlogs.includes(newItemId) && <div className='mt-1 cursor-pointer w-6'><img src={dislike} alt="" onClick={()=>deleteLike(item.id)}/></div>}
             
         </div>
 
         <div className='flex justify-between mt-6'>
             <div className="badge badge-primary p-4 cursor-pointer">Detail</div>
             <div>
-                <CustomRate rate={item.rate} rateCount={item.rateCount} courseId={item.id} setChangeRate={setChangeRate}/>
+                <CustomRate rate={item.rate} rateCount={item.rateCount} coursesAndBlogsId={item.id} setChangeRate={setChangeRate}/>
             </div>
         </div>
 
