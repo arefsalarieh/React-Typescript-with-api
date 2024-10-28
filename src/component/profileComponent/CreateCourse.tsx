@@ -20,7 +20,7 @@ const CreateCourse = () => {
           initialValues={{ courseOrBlogName: "" , describe:'' , type:'course' , cost:'' , likeCount:0 , rate:0 , rateCount:0 , tech:'' }}
           onSubmit={handleCreateCourse}
         >
-          {({ values, handleChange, handleSubmit }) => {
+          {({ values, handleChange, handleSubmit , handleBlur }) => {
             return (
               <form onSubmit={handleSubmit}>
                 <div className='flex flex-wrap justify-around gap-6'>
@@ -37,7 +37,12 @@ const CreateCourse = () => {
                   </div>
 
                   <div className='w-1/3'>
-                    
+                    <select name='tech' value={values.tech} onChange={handleChange} onBlur={handleBlur}  className="select select-bordered w-full max-w-xs">
+                      <option  selected>technology?</option>
+                      <option value='frontEnd'>frontEnd</option>
+                      <option value='backEnd'>backEnd</option>
+                      <option value='ai'>ai</option>
+                    </select>
                   </div>
 
                 </div>

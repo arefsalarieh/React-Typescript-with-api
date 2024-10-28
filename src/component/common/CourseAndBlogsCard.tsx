@@ -46,12 +46,17 @@ const CourseCardAndBlog = ( {item , setChangeRate }:{item:courseAndBlogsType , s
         <h2 className='font-bold text-2xl mt-4'>{item.courseOrBlogName}</h2>
 
         <div className='flex justify-between mt-6 '>
-            <h2 className='font-bold text-lg '>cost : <span className='text-green-400'>{item.cost}</span></h2>
-
-
+            {item.type === 'course' && <h2 className='font-bold text-lg '>cost : <span className='text-green-400'>{item.cost}</span></h2> }
+            {item.type === 'blog' && <h2 className='font-bold text-lg '>x :</h2> }
+            
             {!data?.favoriteCoursesAndBlogs.includes(newItemId) && <div className='mt-1 cursor-pointer w-6'><img src={like} alt="" onClick={()=>handleLike(item.id)}/></div>}
             {data?.favoriteCoursesAndBlogs.includes(newItemId) && <div className='mt-1 cursor-pointer w-6'><img src={dislike} alt="" onClick={()=>deleteLike(item.id)}/></div>}
             
+        </div>
+
+        <div className='my-1'>
+            {item.type === 'course' && <h2 className='font-bold text-lg '>technology : <span className='text-red-400'>{item.tech}</span></h2> }
+
         </div>
 
         <div className='flex justify-between mt-6'>
