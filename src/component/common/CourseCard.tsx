@@ -7,7 +7,7 @@ import useQueryGet from '../../hooks/useQueryGet'
 import useMutationPut from '../../hooks/useMutationPut'
 import { users } from '../../types/usersType'
 
-const CourseCard = ( {item , setChangeRate }:{item:courseAndBlogsType , setChangeRate:(num:number)=>void}) => {
+const CourseCardAndBlog = ( {item , setChangeRate }:{item:courseAndBlogsType , setChangeRate:(num:number)=>void}) => {
     const userId = getItem('id')
     const newItemId = item.id
 
@@ -66,4 +66,4 @@ const CourseCard = ( {item , setChangeRate }:{item:courseAndBlogsType , setChang
   )
 }
 
-export default CourseCard
+export default CourseCardAndBlog

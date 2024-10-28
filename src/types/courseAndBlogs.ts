@@ -6,7 +6,9 @@ export type courseAndBlogsType = {
     cost:string,
     likeCount:number,
     rate:number,
-    rateCount:number
+    rateCount:number,
+    tech:string
+
 }
 
 export type createCourseAndBlogsType = {
@@ -16,5 +18,6 @@ export type createCourseAndBlogsType = {
     cost:string,
     likeCount:number,
     rate:number,
-    rateCount:number
+    rateCount:number,
+    tech:string
 }

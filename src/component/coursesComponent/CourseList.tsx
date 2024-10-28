@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useQueryGet from "../../hooks/useQueryGet"
 import { courseAndBlogsType } from "../../types/courseAndBlogs"
-import CourseCard from "../common/CourseCard"
+import CourseCardAndBlog from "../common/CourseCard"
 import CustomSearch from "../ui/Search";
 
 const CourseList = () => {
@@ -28,7 +28,7 @@ const CourseList = () => {
                     {data?.map(item=>{
                          if(item.type === 'course' && item.courseOrBlogName.indexOf(List) !== -1){
                             return(
-                                <CourseCard item={item} setChangeRate={setChangeRate}/>
+                                <CourseCardAndBlog item={item} setChangeRate={setChangeRate}/>
         
                             )
                         }
