@@ -55,8 +55,7 @@ const CourseCardAndBlog = ( {item , setChangeRate }:{item:courseAndBlogsType , s
         </div>
 
         <div className='my-1'>
-            {item.type === 'course' && <h2 className='font-bold text-lg '>technology : <span className='text-red-400'>{item.tech}</span></h2> }
-
+            <h2 className='font-bold text-lg '>technology : <span className='text-red-400'>{item.tech}</span></h2>
         </div>
 
         <div className='flex justify-between mt-6'>
