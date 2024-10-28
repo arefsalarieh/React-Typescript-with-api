@@ -23,7 +23,6 @@ const SignIn = () => {
     else {
       data?.forEach((item) => {
         if (item.email === values.email && item.password === values.password) {
-          alert("ok");
           clearStorage()
           setItem('id' , item.id)
           navigate('/')

@@ -17,14 +17,14 @@ const CreateCourse = () => {
     <div>
         <h2 className='font-bold text-2xl mt-16 text-center'>
         <Formik
-          initialValues={{ courseName: "" , describe:'' , type:'course' , cost:'' , likeCount:0 , rate:0 , rateCount:0 }}
+          initialValues={{ courseOrBlogName: "" , describe:'' , type:'course' , cost:'' , likeCount:0 , rate:0 , rateCount:0 }}
           onSubmit={handleCreateCourse}
         >
           {({ values, handleChange, handleSubmit }) => (
             <form onSubmit={handleSubmit} >
                 <div  className='flex flex-wrap justify-around gap-6'>
                     <div className='w-1/3'>
-                         <input type="text" name='courseName' value={values.courseName} onChange={handleChange} placeholder="courseName" className="input input-bordered w-full" />
+                         <input type="text" name='courseOrBlogName' value={values.courseOrBlogName} onChange={handleChange} placeholder="courseName" className="input input-bordered w-full" />
                     </div>
 
                     <div className='w-1/3'>

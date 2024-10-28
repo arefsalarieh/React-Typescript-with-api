@@ -43,7 +43,7 @@ const CourseCard = ( {item , setChangeRate }:{item:courseAndBlogsType , setChang
         <img src="./img1.png" alt="" className='mx-auto h-1/2'/>
     </div>
     <div className='px-4'>
-        <h2 className='font-bold text-2xl mt-4'>{item.courseName}</h2>
+        <h2 className='font-bold text-2xl mt-4'>{item.courseOrBlogName}</h2>
 
         <div className='flex justify-between mt-6 '>
             <h2 className='font-bold text-lg '>cost : <span className='text-green-400'>{item.cost}</span></h2>

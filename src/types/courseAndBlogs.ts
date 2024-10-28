@@ -1,6 +1,6 @@
 export type courseAndBlogsType = {
     id:string,
-    courseName:string,
+    courseOrBlogName:string,
     describe:string,
     type:string,
     cost:string,
@@ -10,7 +10,7 @@ export type courseAndBlogsType = {
 }
 
 export type createCourseAndBlogsType = {
-    courseName:string,
+    courseOrBlogName:string,
     describe:string,
     type:string,
     cost:string,

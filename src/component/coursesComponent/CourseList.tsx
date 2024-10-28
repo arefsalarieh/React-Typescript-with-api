@@ -26,7 +26,7 @@ const CourseList = () => {
                 <div className='flex flex-wrap gap-y-4 justify-around mt-6'>
 
                     {data?.map(item=>{
-                         if(item.type === 'course' && item.courseName.indexOf(List) !== -1){
+                         if(item.type === 'course' && item.courseOrBlogName.indexOf(List) !== -1){
                             return(
                                 <CourseCard item={item} setChangeRate={setChangeRate}/>
         
