@@ -17,7 +17,7 @@ const CreateCourse = () => {
         <h2 className='font-bold text-2xl mt-16 text-center'>   CreateCourse     </h2>
         <Formik
     
-          initialValues={{ courseOrBlogName: "" , describe:'' , type:'course' , cost:'' , likeCount:0 , rate:0 , rateCount:0 , tech:'' }}
+          initialValues={{ courseOrBlogName: "" , describe:'' , type:'course' , cost:'free' , likeCount:0 , rate:0 , rateCount:0 , tech:'' }}
           onSubmit={handleCreateCourse}
         >
           {({ values, handleChange, handleSubmit , handleBlur }) => {
