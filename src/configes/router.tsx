@@ -5,6 +5,9 @@ import Login from "../pages/login/Login"
 import Register from "../pages/register/Register"
 import Courses from "../pages/courses/Courses"
 import ProfileLayout from "../pages/profile/ProfileLayout"
+import Dashboard from "../component/profileComponent/Dashboard"
+import CreateCourse from "../component/profileComponent/CreateCourse"
+import FavoriteCourses from "../component/profileComponent/FavoriteCourses"
 
 
 const router = createBrowserRouter([
@@ -34,7 +37,23 @@ const router = createBrowserRouter([
     
     {
         path:'/ProfileLayout',
-        element:<ProfileLayout/>
+        element:<ProfileLayout/>,
+        children:[
+            {
+                path:'',
+                element:<Dashboard/>
+            },
+            {
+                path:'CreateCourse',
+                element:<CreateCourse/>
+            },
+            {
+                path:'FavoriteCourses',
+                element:<FavoriteCourses/>
+            },
+
+            
+        ]
     },    
 ])
 

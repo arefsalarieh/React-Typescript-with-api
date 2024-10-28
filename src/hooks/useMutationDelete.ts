@@ -9,7 +9,7 @@ const useMutationDelete =  (url:string , key:string): UseMutationResult<any, unk
     
     const handleDeleteLike =async (data:any)=>{  
           const res =await http.delete(url ,data)
-          console.log(res.data);
+        //   console.log(res.data);
     
       }
     

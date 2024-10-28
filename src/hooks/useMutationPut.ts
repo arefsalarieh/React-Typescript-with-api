@@ -6,7 +6,7 @@ const useMutationPut = (url: string, key: string) => {
 
   const handleUpdata = async (values: any) => {
     const res = await http.put(url, values);
-    console.log(res.data);
+    // console.log(res.data);
   };
 
   return useMutation(handleUpdata, {

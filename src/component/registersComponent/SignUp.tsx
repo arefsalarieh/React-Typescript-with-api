@@ -41,7 +41,7 @@ const SignUp = () => {
       };
       const res = await http.post("/users", obj);
       if (res.status === 201) {
-        navigate("/");
+        navigate("/login");
       }
     }
   };

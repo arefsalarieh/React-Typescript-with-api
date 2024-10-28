@@ -1,11 +1,12 @@
 import { Formik } from "formik";
 import { signInType } from "../../types/signInTypes";
 import useQueryGet from "../../hooks/useQueryGet";
-import { setItem } from "../../core/services/common/storage.services";
+import { clearStorage, setItem } from "../../core/services/common/storage.services";
 import { users } from "../../types/usersType";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate()
   const { data } = useQueryGet<users[]>(`/users`, ["usersIn"]);
 
   const handleSignIn = async (values: signInType) => {
@@ -23,7 +24,9 @@ const SignIn = () => {
       data?.forEach((item) => {
         if (item.email === values.email && item.password === values.password) {
           alert("ok");
-          setItem('token' , item.token)
+          clearStorage()
+          setItem('id' , item.id)
+          navigate('/')
         }
       });
     }

@@ -1,6 +1,6 @@
 import useQueryGet from "../../hooks/useQueryGet"
 import { courseAndBlogsType } from "../../types/courseAndBlogs"
-import CourseCard from "./CourseCard"
+import CourseCard from "../common/CourseCard"
 
 const CourseList = () => {
     const {data} = useQueryGet<courseAndBlogsType[]>('https://671d123d09103098807c2afb.mockapi.io/arefsalarieh/courseandblogs' , ['courseList'])
@@ -15,10 +15,13 @@ const CourseList = () => {
             </div>
             <div className='flex flex-wrap gap-y-4 justify-around w-[70%] '>
                 {data?.map(item=>{
-                    return(
-                        <CourseCard {...item}/>
+                    if(item.type === true){
+                        return(
+                            <CourseCard {...item}/>
+    
+                        )
+                    }
 
-                    )
                 })}
             </div>
         </div>
