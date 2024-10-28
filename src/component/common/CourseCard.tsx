@@ -1,4 +1,3 @@
-import React from 'react'
 import CustomRate from '../ui/Rate'
 import like from '../../assets/images/like.png'
 import dislike from '../../assets/images/dislike.png'
@@ -8,12 +7,11 @@ import useQueryGet from '../../hooks/useQueryGet'
 import useMutationPut from '../../hooks/useMutationPut'
 import { users } from '../../types/usersType'
 
-const CourseCard = (item:courseAndBlogsType) => {
+const CourseCard = ( {item , setChangeRate }:{item:courseAndBlogsType , setChangeRate:(num:number)=>void}) => {
     const userId = getItem('id')
-    const {data} = useQueryGet<users>(`/users/${userId}` ,  ['userInfoForCoursList'])
     const newItemId = item.id
-    // console.log(data?.favoriteCourses.includes(newItemId) );
 
+    const {data} = useQueryGet<users>(`/users/${userId}` ,  ['userInfoForCoursList'])
     const {mutate} =  useMutationPut(`/users/${userId}` , 'courseList')
 
     
@@ -59,7 +57,7 @@ const CourseCard = (item:courseAndBlogsType) => {
         <div className='flex justify-between mt-6'>
             <div className="badge badge-primary p-4 cursor-pointer">Detail</div>
             <div>
-                <CustomRate rate={item.rate} rateCount={item.rateCount} courseId={item.id}/>
+                <CustomRate rate={item.rate} rateCount={item.rateCount} courseId={item.id} setChangeRate={setChangeRate}/>
             </div>
         </div>
 

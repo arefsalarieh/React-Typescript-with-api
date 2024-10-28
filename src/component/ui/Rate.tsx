@@ -7,7 +7,7 @@ import { users } from '../../types/usersType';
 import { getItem } from '../../core/services/common/storage.services';
 
 
-const CustomRate= ({rate , rateCount , courseId}:{rate:number , rateCount:number ,courseId:string}) => {
+const CustomRate= ({rate , rateCount , courseId , setChangeRate}:{rate:number , rateCount:number ,courseId:string , setChangeRate:(num:number)=>void}) => {
   const userId = getItem('id')
   
 
@@ -53,15 +53,14 @@ const CustomRate= ({rate , rateCount , courseId}:{rate:number , rateCount:number
       courseObj.rate = newRate
       courseObj.rateCount = newRateCount
     }
-    
-
-  
-
     mutate(userObj)
     mutate2(courseObj)
 
-
+    const fake = Math.random()
+    setChangeRate(fake)
   }
+
+
   return (
     <Flex gap="" vertical>
       <Rate  onChange={sendRate} value={rate} />

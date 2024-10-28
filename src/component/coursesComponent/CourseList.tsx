@@ -1,9 +1,20 @@
+import { useEffect, useState } from "react";
 import useQueryGet from "../../hooks/useQueryGet"
 import { courseAndBlogsType } from "../../types/courseAndBlogs"
 import CourseCard from "../common/CourseCard"
 
 const CourseList = () => {
+    const [changeRate , setChangeRate] = useState(0)
+    const [List, setList] = useState<null | courseAndBlogsType[] >(null);
     const {data} = useQueryGet<courseAndBlogsType[]>('https://671d123d09103098807c2afb.mockapi.io/arefsalarieh/courseandblogs' , ['courseList'])
+  
+    useEffect(() => {
+        if(data){
+            setList(data) 
+
+        }
+    }, [changeRate]);
+  
   return (
     <div className='border-2 border-green-400 mt-8'>
         <h2  className='font-bold text-2xl mt-8 text-center'>Course list</h2>
@@ -15,9 +26,9 @@ const CourseList = () => {
             </div>
             <div className='flex flex-wrap gap-y-4 justify-around w-[70%] '>
                 {data?.map(item=>{
-                    if(item.type === true){
+                    if(item.type === 'course'){
                         return(
-                            <CourseCard {...item}/>
+                            <CourseCard item={item} setChangeRate={setChangeRate}/>
     
                         )
                     }

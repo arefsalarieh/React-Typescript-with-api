@@ -2,7 +2,7 @@ export type courseAndBlogsType = {
     id:string,
     courseName:string,
     describe:string,
-    type:boolean,
+    type:string,
     cost:string,
     likeCount:number,
     rate:number,
@@ -12,7 +12,7 @@ export type courseAndBlogsType = {
 export type createCourseAndBlogsType = {
     courseName:string,
     describe:string,
-    type:boolean,
+    type:string,
     cost:string,
     likeCount:number,
     rate:number,
