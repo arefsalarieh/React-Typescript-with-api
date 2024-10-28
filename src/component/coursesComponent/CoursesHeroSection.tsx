@@ -1,5 +1,5 @@
 import courseHero from "../../assets/images/course-hero.svg";
-import CustomSearch from "../ui/Search";
+
 
 const CoursesHeroSection = () => {
   return (
@@ -15,7 +15,6 @@ const CoursesHeroSection = () => {
             voluptatibus blanditiis debitis laborum numquam corporis voluptate
             alias vitae sequi. Atque, rerum.
           </h6>
-          <CustomSearch />
         </div>
         <div className="  w-[35%]">
           <img src={courseHero} alt="" className="h-96" />
