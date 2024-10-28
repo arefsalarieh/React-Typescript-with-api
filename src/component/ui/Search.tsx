@@ -5,7 +5,7 @@ import { Input, Space } from 'antd';
 const { Search } = Input;
 
 
-const CustomSearch = ({ setList}:{ setList:(arg:string)=>void}) =>{
+const CustomSearch = ({ setQuery}:{ setQuery:(arg:string)=>void}) =>{
 
 
 
@@ -16,7 +16,7 @@ const CustomSearch = ({ setList}:{ setList:(arg:string)=>void}) =>{
       allowClear
       enterButton="Search"
       size="large"
-      onSearch={setList}
+      onSearch={setQuery}
     />
   </Space>
   )

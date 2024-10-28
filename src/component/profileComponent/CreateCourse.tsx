@@ -1,5 +1,4 @@
 import { Formik } from 'formik'
-import React from 'react'
 import { createCourseAndBlogsType } from '../../types/courseAndBlogs';
 import http from '../../core/services/interceptor'
 
@@ -15,7 +14,7 @@ const CreateCourse = () => {
     }
   return (
     <div>
-        <h2 className='font-bold text-2xl mt-16 text-center'>
+        <h2 className='font-bold text-2xl mt-16 text-center'>   CreateCourse     </h2>
         <Formik
     
           initialValues={{ courseOrBlogName: "" , describe:'' , type:'course' , cost:'' , likeCount:0 , rate:0 , rateCount:0 , tech:'' }}
@@ -54,7 +53,7 @@ const CreateCourse = () => {
             );
           }}
         </Formik>
-        </h2>
+
     </div>
   )
 }

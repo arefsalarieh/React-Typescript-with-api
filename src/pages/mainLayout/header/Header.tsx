@@ -11,7 +11,7 @@ const Header = () => {
       <div className='mt-6 flex gap-10'>
         <NavLink to='/'>home</NavLink>
         <NavLink to='/courses'>courses</NavLink>
-        <NavLink to='/'>blogs</NavLink>
+        <NavLink to='/Blogs'>blogs</NavLink>
       </div>
       <div className='px-3 py-3 h-14 mt-4 rounded-full bg-[#01CEC9] cursor-pointer'>
         <NavLink to='/register'>register / login</NavLink>

@@ -17,8 +17,9 @@ const Sidebar = () => {
         <div className="collapse collapse-arrow join-item border-base-300 border">
           <input type="radio" name="my-accordion-4" />
           <div className="collapse-title text-xl font-medium text-white">admin pannel</div>
-          <div className="collapse-content">
+          <div className="collapse-content  flex flex-col">
             <NavLink to='/ProfileLayout/CreateCourse'>CreateCourse</NavLink>
+            <NavLink to='/ProfileLayout/CreateBlog'>CreateBlog</NavLink>            
           </div>
         </div>
       </div>
