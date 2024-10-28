@@ -2,7 +2,7 @@ import { Flex, Rate } from 'antd';
 
 
 const FilterRate = ({setRateFilter}:{setRateFilter:(arg : number | null)=>void}) => {
-    const rateArr:number[] = [0 , 1 , 2 , 3 , 4 , 5 ]
+    const rateArr:number[] = [0 , 1 , 2 , 3 , 4 ]
 
     const handleRateFilter = (e: React.FormEvent<HTMLInputElement>) =>{
         const newRate = Number(e.currentTarget.value)
@@ -27,6 +27,18 @@ const FilterRate = ({setRateFilter}:{setRateFilter:(arg : number | null)=>void})
                     </div>                      
                 )
             })}
+            
+                    <div className='flex my-1'>
+                        <input type="radio" name="rate" className="radio h-4 mr-2 " value={5} id='5'  onChange={handleRateFilter}/>
+                            <label htmlFor='5' className='text-red-600'>
+                                <Flex gap="" vertical>
+                                    <Rate   value={5} /> 
+                                </Flex>               
+                        </label>    
+                        <h3 className='text-green-400 ms-3'>        </h3>    
+
+                    </div>
+
                      
 
 
