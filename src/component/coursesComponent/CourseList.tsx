@@ -14,18 +14,19 @@ const CourseList = () => {
     const [RateFilter, setRateFilter] = useState<number | null>(null);
     const [MinCost, setMinCost] = useState(0);
     const [MaxCost, setMaxCost] = useState(10000000);
+    const [Freedom, setFreedom] = useState('all');
     const {data} = useQueryGet<courseAndBlogsType[]>('https://671d123d09103098807c2afb.mockapi.io/arefsalarieh/courseandblogs' , ['courseList'])
 
   
   return (
     <div className='mt-8'>
-        
-        {RateFilter && RateFilter}
         <div className='flex justify-around '>
             <div className='border-2 border-red-400 w-[25%] '>
                 <CoursesAndBlogsFilter setTechFilter={setTechFilter}/>
                 <FilterRate setRateFilter={setRateFilter}/>
-                <FilterCost MinCost={MinCost} setMinCost={setMinCost} MaxCost={MaxCost} setMaxCost={setMaxCost}/>
+        {Freedom}
+
+                <FilterCost MinCost={MinCost} setMinCost={setMinCost} MaxCost={MaxCost} setMaxCost={setMaxCost} setFreedom={setFreedom}/>
             </div>
 
             <div className=" w-[70%] text-center ">
@@ -40,7 +41,7 @@ const CourseList = () => {
                             (RateFilter ? RateFilter <= item.rate   : true) &&
                             (item.cost !== 'free' ? Number(item.cost) > MinCost : false ) &&
                             (item.cost !== 'free' ? Number(item.cost) < MaxCost : false ) || 
-                            (MinCost === 0 && item.cost === 'free' )){
+                            (MinCost === 0 && item.cost === 'free' ) ){
                             return( 
                                 <CourseCardAndBlog item={item} setChangeRate={setChangeRate}/>
         
