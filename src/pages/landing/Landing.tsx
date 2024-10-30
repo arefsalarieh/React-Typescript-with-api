@@ -1,21 +1,18 @@
 
+import LandingHeroSection from "../../component/landingComponent/LandingHeroSection"
+import TopCourses from "../../component/landingComponent/TopCourses"
 import useQueryGet from "../../hooks/useQueryGet"
 import { users } from "../../types/usersType"
 
-type course = {
-  name:string
-}
+
 
 const Landing = () => {
-  const {data} = useQueryGet<users[]>(`/users` , ['users'])
+
 
   return (
     <div>
-      { data?.map(item=>{
-        return(
-          <h1>{item.email}</h1>
-        )
-      })}
+      <LandingHeroSection/>
+      <TopCourses/>
     </div>
   )
 }

@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { Slider, Switch } from 'antd';
 
-const FilterCost = ({MinCost  , MaxCost , setMinCost , setMaxCost , setFreedom}:{MinCost:number , setMinCost:(arg:number)=>void , MaxCost:number , setMaxCost:(arg:number)=>void , setFreedom:(arg:string)=>void}) => {
+const FilterCost = ({MinCost  , MaxCost , setMinCost , setMaxCost }:{MinCost:number , setMinCost:(arg:number)=>void , MaxCost:number , setMaxCost:(arg:number)=>void }) => {
 
   const handleCost = (arr:number[]) =>{
     setMinCost(arr[0]*100000)
     setMaxCost(arr[1]*100000)
   }
 
-  const handleFree = (e : React.FormEvent<HTMLInputElement>) =>{
-      setFreedom(e.currentTarget.value);
-  }
+
 
   return (
     <>

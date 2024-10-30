@@ -5,7 +5,7 @@ import { users } from '../../types/usersType';
 import { getItem } from '../../core/services/common/storage.services';
 
 
-const CustomRate= ({rate , rateCount , coursesAndBlogsId , setChangeRate}:{rate:number , rateCount:number ,coursesAndBlogsId:string , setChangeRate:(num:number)=>void}) => {
+const CustomRate= ({rate , rateCount , coursesAndBlogsId }:{rate:number , rateCount:number ,coursesAndBlogsId:string }) => {
   const userId = getItem('id')
   
 
@@ -52,8 +52,6 @@ const CustomRate= ({rate , rateCount , coursesAndBlogsId , setChangeRate}:{rate:
     mutate(userObj)
     mutate2(courseObj)
 
-    const fake = Math.random()
-    setChangeRate(fake)
   }
 
 

@@ -8,25 +8,24 @@ import FilterRate from "../common/FilterRate";
 import FilterCost from "../common/FilterCost";
 
 const CourseList = () => {
-    const [changeRate , setChangeRate] = useState(0)
     const [query, setQuery] = useState< string >('');
     const [TechFilter, setTechFilter] = useState< string >('clear');
     const [RateFilter, setRateFilter] = useState<number | null>(null);
     const [MinCost, setMinCost] = useState(0);
     const [MaxCost, setMaxCost] = useState(10000000);
-    const [Freedom, setFreedom] = useState('all');
+
     const {data} = useQueryGet<courseAndBlogsType[]>('https://671d123d09103098807c2afb.mockapi.io/arefsalarieh/courseandblogs' , ['courseList'])
 
   
   return (
     <div className='mt-8'>
         <div className='flex justify-around '>
-            <div className='border-2 border-red-400 w-[25%] '>
+            <div className=' w-[25%] '>
                 <CoursesAndBlogsFilter setTechFilter={setTechFilter}/>
                 <FilterRate setRateFilter={setRateFilter}/>
-        {Freedom}
+       
 
-                <FilterCost MinCost={MinCost} setMinCost={setMinCost} MaxCost={MaxCost} setMaxCost={setMaxCost} setFreedom={setFreedom}/>
+                <FilterCost MinCost={MinCost} setMinCost={setMinCost} MaxCost={MaxCost} setMaxCost={setMaxCost} />
             </div>
 
             <div className=" w-[70%] text-center ">
@@ -43,7 +42,7 @@ const CourseList = () => {
                             (item.cost !== 'free' ? Number(item.cost) < MaxCost : false ) || 
                             (MinCost === 0 && item.cost === 'free' ) ){
                             return( 
-                                <CourseCardAndBlog item={item} setChangeRate={setChangeRate}/>
+                                <CourseCardAndBlog item={item} />
         
                             )
                         }

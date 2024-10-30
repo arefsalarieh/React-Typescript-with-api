@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      transitionProperty: {
+        'left': 'left',
+
+      }
+    },
   },
   plugins: [
     require('daisyui'),
