@@ -58,7 +58,7 @@ const CustomRate= ({rate , rateCount , coursesAndBlogsId }:{rate:number , rateCo
   return (
     <Flex gap="" vertical>
       <Rate  onChange={sendRate} value={rate} />
-      
+      {rate}
     </Flex>
   );
 };

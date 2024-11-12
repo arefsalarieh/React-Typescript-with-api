@@ -1,50 +1,32 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React-Typescript-with-api
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A react project with typescript tha use two table from mockapi.io , one table for users list and another table for courses and news together.
+every logic for search , filter , rate and ... handle in front side.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Authors
 
-- Configure the top-level `parserOptions` property like this:
+- [@arefsalarieh](https://www.github.com/arefsalarieh)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Badges
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+[![MIT user table](https://img.shields.io/badge/License-MIT-green.svg)](https://671d123d09103098807c2afb.mockapi.io/arefsalarieh/users)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://671d123d09103098807c2afb.mockapi.io/arefsalarieh/courseandblogs)
+
+
+
+## 🚀 About Me
+im a frontend developer whit +3 years experience
+
+
+## Tech Stack
+
+**Client:** React, typescript, TailwindCSS ,react-query , react-router-dom, axios , formik , yup , antd , react-router-dom , redux-toolkit , daisyui
+
+**Server:** mockapi.io
+

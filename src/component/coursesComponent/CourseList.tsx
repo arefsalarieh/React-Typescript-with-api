@@ -10,7 +10,7 @@ import FilterCost from "../common/FilterCost";
 const CourseList = () => {
     const [query, setQuery] = useState< string >('');
     const [TechFilter, setTechFilter] = useState< string >('clear');
-    const [RateFilter, setRateFilter] = useState<number | null>(null);
+    const [RateFilter, setRateFilter] = useState<number >(0);
     const [MinCost, setMinCost] = useState(0);
     const [MaxCost, setMaxCost] = useState(10000000);
 
@@ -37,10 +37,9 @@ const CourseList = () => {
                     {data?.map(item=>{
                          if(item.type === 'course' && item.courseOrBlogName.indexOf(query) !== -1 &&
                           (TechFilter !== 'clear' ? item.tech === TechFilter : true) &&  
-                            (RateFilter ? RateFilter <= item.rate   : true) &&
-                            (item.cost !== 'free' ? Number(item.cost) > MinCost : false ) &&
-                            (item.cost !== 'free' ? Number(item.cost) < MaxCost : false ) || 
-                            (MinCost === 0 && item.cost === 'free' ) ){
+                            (item.rate >= RateFilter ) &&
+                            ((item.cost !== 'free' ? Number(item.cost) > MinCost : false ) && (item.cost !== 'free' ? Number(item.cost) < MaxCost : false ) ||  (MinCost === 0 && item.cost === 'free' )) 
+                        ){
                             return( 
                                 <CourseCardAndBlog item={item} />
         
